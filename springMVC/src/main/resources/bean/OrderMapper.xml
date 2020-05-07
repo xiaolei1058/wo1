@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="srzx.dao.OrderDao">
+<!--    <select id="findAll2" resultType="srzx.engine.Orderitem">-->
+<!--       select * from orderitem ;-->
+<!--    </select>-->
+
+<!--    <delete id="delete" parameterType="srzx.engine.Order ">-->
+<!--delete from order where o_id=#{o_id}-->
+<!--    </delete>-->
+<!--&lt;!&ndash;    <delete id="delete" parameterType="srzx.engine.Orderitem">&ndash;&gt;-->
+<!--&lt;!&ndash;delete from orderitem where oi_id=#{oi_id}&ndash;&gt;-->
+<!--&lt;!&ndash;    </delete>&ndash;&gt;-->
+<!--    <update id="update" parameterType="srzx.engine.Product">-->
+<!--        update product set name=#{name},account=#{account},j_price=#{j_price},s_price=#{s_price},y_price=#{y_price},store=#{store},pics=#{pics},sell=#{sell},watch=#{watch},status=#{status},is_top=#{is_top},t_id=#{t_id} where id=#{id};-->
+<!--    </update>-->
+    <select id="findAll"  resultType="srzx.engine.Order">
+        select * from order1;
+    </select>
+</mapper>

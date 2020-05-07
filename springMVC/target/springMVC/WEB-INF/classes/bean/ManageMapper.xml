@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="srzx.dao.ManageDao">
+    <select id="findAll" resultType="srzx.engine.Manage">
+        select * from manage
+    </select>
+    <delete id="delete" parameterType="int">
+        delete from manage where id=#{id}
+    </delete>
+    <insert id="add" parameterType="srzx.engine.Manage">
+        insert into manage(name,password,role) values(#{name},#{password},#{role})
+    </insert>
+    <select id="login" resultType="srzx.engine.Manage" parameterType="srzx.engine.Manage">
+        select * from manage where name=#{name} and password=#{password}
+    </select>
+    <update id="update" parameterType="srzx.engine.Manage">
+        update manage set name=#{name},role=#{role} where id=#{id}
+    </update>
+    <select id="findid" parameterType="int" resultType="srzx.engine.Manage">
+        select * from manage where id=#{id}
+    </select>
+<!--    <resultMap id="Map" type="srzx.engine.Menu">-->
+<!--        <id column="id" property="id"/>-->
+<!--        <result column="name" property="name"/>-->
+<!--        <result column="url" property="url"/>-->
+<!--        <result column="pid" property="pid"/>-->
+<!--        <result column="del" property="del"></result>-->
+<!--    </resultMap>-->
+
+
+    <select id="findmenu" parameterType="int" resultType="srzx.engine.Menu">
+        select *from menu where pid=#{id}
+    </select>
+    <select id="findmenuone" parameterType="int" resultType="srzx.engine.Menu">
+
+select *from menu where id in(select mid from role_menu where mid!=1 and rid=#{rid} )
+    </select>
+</mapper>
